@@ -21,8 +21,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3-pip python3-venv nginx mysql-server redis-server git
 
 pip install django mysqlclient netmiko cryptography django-ratelimit
-django-admin startproject django_router_acl_manager
-cd django_router_acl_manager
+django-admin startproject DjangoRouterManager
+cd DjangoRouterManager
 touch .env
 touch requirements.txt
 python3 -m venv routerenv, 
