@@ -1,6 +1,5 @@
 # Network_Monitor.py
-# pip install platform, subprocess, time 
-# pip install psutil scapy matplotlib 
+# pip install platform subprocess time psutil scapy matplotlib
 import os
 import platform
 import subprocess
