@@ -1,5 +1,6 @@
 # Network_Monitor.py
 # pip install platform subprocess time psutil scapy matplotlib
+
 import os
 import platform
 import subprocess
@@ -182,9 +183,7 @@ Step-by-Step Deployment
     Install Required Libraries:
     Open a terminal and run:
     bash
-
-pip install psutil scapy matplotlib
-
+    
 Create a Configuration File:
 
     Create a file named config.ini in the same directory as network_monitor.py. This can include any necessary configuration settings.
