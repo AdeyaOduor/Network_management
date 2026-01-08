@@ -390,8 +390,6 @@ bash
 
 python network_monitor.py traffic --count 50 --src 192.168.1.1
 
-
-
 If vulnerabilities such as open ports and poor network performance are noticed, take the following actions:
 Addressing Open Ports
 
