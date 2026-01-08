@@ -3,6 +3,19 @@
 Enhanced Network Monitoring Tool
 Version: 2.0.0
 Optimized for production deployment with comprehensive monitoring capabilities
+
+# Ubuntu/Debian
+sudo apt-get install python3-pip python3-dev libpcap-dev tcpdump
+
+# RHEL/CentOS
+sudo yum install python3-pip python3-devel libpcap-devel tcpdump
+
+# macOS
+brew install python3 libpcap tcpdump
+
+pip install -r requirements.txt
+
+
 """
 
 import os
