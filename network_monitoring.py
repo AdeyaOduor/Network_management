@@ -1088,10 +1088,14 @@ def main():
 if __name__ == "__main__":
     main()
 # ========================== Deployment ========================================================
-
+"""
 #!/bin/bash
-# deploy_network_monitor.sh
+ deploy_network_monitor.sh
 # Comprehensive deployment script for the Enhanced Network Monitoring Tool
+chmod +x deploy_network_monitor.sh
+./deploy_network_monitor.sh 
+
+"""
 
 set -e
 
