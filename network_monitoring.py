@@ -52,6 +52,22 @@ python network_monitor.py info
 │  │ Generator│ │ Engine  │  │ Exporter│        │
 │  └─────────┘  └─────────┘  └─────────┘        │
 └─────────────────────────────────────────────────┘
+
+Common Issues
+
+    Permission denied for packet capture
+    bash
+
+# Linux
+sudo setcap cap_net_raw=eip $(which python3)
+
+# Or run with sudo
+sudo python network_monitor.py traffic
+
+Missing dependencies
+bash
+
+pip install -r requirements.txt --upgrade
 """
 
 import os
