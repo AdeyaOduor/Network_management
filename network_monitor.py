@@ -2023,17 +2023,3 @@ create_documentation() {
     print_status "Creating documentation..."
     
     cat > README.md << 'EOF'
-# Enhanced Network Monitoring Tool
-
-A comprehensive, production-ready network monitoring tool written in Python.
-
-## Features
-
-- **Host Monitoring**: Continuous ping monitoring with real-time statistics
-- **Port Scanning**: Fast, concurrent port scanning with service detection
-- **Bandwidth Monitoring**: Real-time network usage tracking with graphs
-- **Traffic Analysis**: Packet capture and analysis with filtering
-- **Scheduled Tasks**: Automated monitoring with configurable schedules
-- **Multiple Outputs**: JSON, CSV, HTML reports and real-time console display
-- **Alerting**: Configurable notifications via email, Slack, webhooks
-- **Metrics Export**: Prometheus metrics endpoint for integration
