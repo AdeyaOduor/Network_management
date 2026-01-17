@@ -15,6 +15,13 @@ brew install python3 libpcap tcpdump
 
 pip install -r requirements.txt
 
+===================================================================================
+#!/bin/bash
+ deploy_network_monitor.sh
+# Comprehensive deployment script for the Enhanced Network Monitoring Tool
+chmod +x deploy_network_monitor.sh
+./deploy_network_monitor.sh 
+====================================================================================
 # Monitor hosts
 python network_monitor.py monitor google.com 8.8.8.8 --interval 10
 
@@ -30,7 +37,7 @@ sudo python network_monitor.py traffic --count 1000 --protocol tcp
 # Show system info
 python network_monitor.py info
 
-
+=====================================================================================
 Common Issues
 
     Permission denied for packet capture
@@ -46,6 +53,8 @@ Missing dependencies
 bash
 
 pip install -r requirements.txt --upgrade
+
+========================================================================================
 """
 
 #!/usr/bin/env python3
