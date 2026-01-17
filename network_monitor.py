@@ -31,28 +31,6 @@ sudo python network_monitor.py traffic --count 1000 --protocol tcp
 python network_monitor.py info
 
 
-┌─────────────────────────────────────────────────┐
-│              Network Monitoring Tool            │
-├─────────────────────────────────────────────────┤
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
-│  │ Monitor │  │  Scan   │  │Traffic  │        │
-│  │ Manager │  │ Engine  │  │Analyzer │        │
-│  └─────────┘  └─────────┘  └─────────┘        │
-│         │            │            │            │
-│  ┌─────────────────────────────────────┐      │
-│  │         Data Collection Layer       │      │
-│  └─────────────────────────────────────┘      │
-│         │            │            │            │
-│  ┌─────────────────────────────────────┐      │
-│  │      Storage & Processing Layer     │      │
-│  └─────────────────────────────────────┘      │
-│         │            │            │            │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
-│  │ Reports │  │ Alerts  │  │ Metrics │        │
-│  │ Generator│ │ Engine  │  │ Exporter│        │
-│  └─────────┘  └─────────┘  └─────────┘        │
-└─────────────────────────────────────────────────┘
-
 Common Issues
 
     Permission denied for packet capture
@@ -68,6 +46,13 @@ Missing dependencies
 bash
 
 pip install -r requirements.txt --upgrade
+"""
+
+#!/usr/bin/env python3
+"""
+Enhanced Network Monitoring Tool
+Version: 2.0.0
+Optimized for production deployment with comprehensive monitoring capabilities
 """
 
 import os
@@ -1126,15 +1111,9 @@ def main():
 
 if __name__ == "__main__":
     main()
-# ========================== Deployment ========================================================
-"""
-#!/bin/bash
- deploy_network_monitor.sh
-# Comprehensive deployment script for the Enhanced Network Monitoring Tool
-chmod +x deploy_network_monitor.sh
-./deploy_network_monitor.sh 
 
-"""
+
+# ========================== Deployment ========================================================
 
 set -e
 
