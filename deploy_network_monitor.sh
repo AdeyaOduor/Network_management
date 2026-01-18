@@ -1,4 +1,5 @@
-
+#!/bin/bash
+# Comprehensive deployment script for the Enhanced Network Monitoring Tool
 set -e
 
 # Colors for output
