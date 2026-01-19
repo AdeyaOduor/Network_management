@@ -36,6 +36,16 @@ A comprehensive, production-ready network monitoring tool written in Python.
 │  └─────────┘  └─────────┘  └─────────┘        │
 └─────────────────────────────────────────────────┘
 
+# Ubuntu/Debian
+sudo apt-get install python3-pip python3-dev libpcap-dev tcpdump
+
+# RHEL/CentOS
+sudo yum install python3-pip python3-devel libpcap-devel tcpdump
+
+# macOS
+brew install python3 libpcap tcpdump
+
+pip install -r requirements.txt
 
 ### Monitor hosts
 python network_monitor.py monitor google.com 8.8.8.8 --interval 10
@@ -61,10 +71,13 @@ python monitor_wrapper.py --custom
 ### Run as service
 ./start_monitor.sh service
 
+==========================================================================
+#!/bin/bash
+ deploy_network_monitor.sh
 
 # Quick Deployment
 chmod +x deploy_network_monitor.sh
-./deploy_network_monitor.sh
+./deploy_network_monitor.sh 
 
 # Advanced deployment
 ## Docker deployment
@@ -83,7 +96,7 @@ git clone <repository-url>
 cd network-monitor
 ./deploy_network_monitor.sh
 
-# ===================== Docker deployment =========================================
+# ===================== Docker deployment ===============
 ### Build and run
 docker-compose up -d
 
@@ -92,7 +105,7 @@ docker-compose logs -f network-monitor
 
 ### Stop services
 docker-compose down
-# ===================== Kubernettes deployment =======================================
+# ===================== Kubernettes deployment ============
 ### Apply configuration
 kubectl apply -f kubernetes/
 
@@ -103,39 +116,6 @@ kubectl get pods -l app=network-monitor
 kubectl logs deployment/network-monitor
 
 # Edit config/network_monitor.yaml to customize
-
-# Ubuntu/Debian
-sudo apt-get install python3-pip python3-dev libpcap-dev tcpdump
-
-# RHEL/CentOS
-sudo yum install python3-pip python3-devel libpcap-devel tcpdump
-
-# macOS
-brew install python3 libpcap tcpdump
-
-pip install -r requirements.txt
-
-===================================================================================
-#!/bin/bash
- deploy_network_monitor.sh
-# Comprehensive deployment script for the Enhanced Network Monitoring Tool
-chmod +x deploy_network_monitor.sh
-./deploy_network_monitor.sh 
-====================================================================================
-# Monitor hosts
-python network_monitor.py monitor google.com 8.8.8.8 --interval 10
-
-# Scan ports
-python network_monitor.py scan 192.168.1.1 --ports 1-1024,3389,8080
-
-# Monitor bandwidth
-python network_monitor.py bandwidth --interface eth0 --graph
-
-# Analyze traffic
-sudo python network_monitor.py traffic --count 1000 --protocol tcp
-
-# Show system info
-python network_monitor.py info
 
 =====================================================================================
 Common Issues
