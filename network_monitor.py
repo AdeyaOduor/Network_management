@@ -3,65 +3,6 @@
 Enhanced Network Monitoring Tool
 Version: 2.0.0
 Optimized for production deployment with comprehensive monitoring capabilities
-
-# Ubuntu/Debian
-sudo apt-get install python3-pip python3-dev libpcap-dev tcpdump
-
-# RHEL/CentOS
-sudo yum install python3-pip python3-devel libpcap-devel tcpdump
-
-# macOS
-brew install python3 libpcap tcpdump
-
-pip install -r requirements.txt
-
-===================================================================================
-#!/bin/bash
- deploy_network_monitor.sh
-# Comprehensive deployment script for the Enhanced Network Monitoring Tool
-chmod +x deploy_network_monitor.sh
-./deploy_network_monitor.sh 
-====================================================================================
-# Monitor hosts
-python network_monitor.py monitor google.com 8.8.8.8 --interval 10
-
-# Scan ports
-python network_monitor.py scan 192.168.1.1 --ports 1-1024,3389,8080
-
-# Monitor bandwidth
-python network_monitor.py bandwidth --interface eth0 --graph
-
-# Analyze traffic
-sudo python network_monitor.py traffic --count 1000 --protocol tcp
-
-# Show system info
-python network_monitor.py info
-
-=====================================================================================
-Common Issues
-
-    Permission denied for packet capture
-    bash
-
-# Linux
-sudo setcap cap_net_raw=eip $(which python3)
-
-# Or run with sudo
-sudo python network_monitor.py traffic
-
-Missing dependencies
-bash
-
-pip install -r requirements.txt --upgrade
-
-========================================================================================
-"""
-
-#!/usr/bin/env python3
-"""
-Enhanced Network Monitoring Tool
-Version: 2.0.0
-Optimized for production deployment with comprehensive monitoring capabilities
 """
 
 import os
