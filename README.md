@@ -36,6 +36,32 @@ A comprehensive, production-ready network monitoring tool written in Python.
 │  └─────────┘  └─────────┘  └─────────┘        │
 └─────────────────────────────────────────────────┘
 
+
+# Monitor hosts
+python network_monitor.py monitor google.com 8.8.8.8 --interval 10
+
+# Scan ports
+python network_monitor.py scan 192.168.1.1 --ports 1-1024,3389,8080
+
+# Monitor bandwidth
+python network_monitor.py bandwidth --interface eth0 --graph
+
+# Analyze traffic
+sudo python network_monitor.py traffic --count 1000 --protocol tcp
+
+# Show system info
+python network_monitor.py info
+
+# Run with default schedule
+python monitor_wrapper.py --schedule
+
+# Configure custom schedule
+python monitor_wrapper.py --custom
+
+# Run as service
+./start_monitor.sh service
+
+
 # Quick Deployment
 chmod +x deploy_network_monitor.sh
 ./deploy_network_monitor.sh
