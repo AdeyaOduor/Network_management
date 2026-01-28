@@ -1,0 +1,97 @@
+# GCP Vulnerability Scanner Configuration
+
+# GCP Authentication
+service_account_key_path: "/path/to/service-account-key.json"  # Optional, uses ADC if not specified
+project_id: "your-gcp-project-id"
+organization_id: "123456789012"  # Optional, for organization-wide scanning
+
+# Scanning Scope
+scan_all_projects: false  # Set to true for organization-wide scanning
+projects:
+  - "project-a"
+  - "project-b"
+  - "project-c"
+
+scan_only_project_buckets: true  # Only scan buckets in target projects
+
+# Resource Scanning Configuration
+scan_compute: true
+scan_cloud_sql: true
+scan_cloud_storage: true
+scan_gke: true
+scan_vpc: true
+scan_iam: true
+scan_cloud_functions: true
+scan_app_engine: true
+scan_cloud_run: true
+
+# Regions to scan
+regions:
+  - "us-central1"
+  - "us-east1"
+  - "us-west1"
+  - "europe-west1"
+  - "asia-east1"
+  - "asia-northeast1"
+
+# Scanning Schedule
+scan_frequency: "daily"  # daily, weekly, monthly
+severity_threshold: "MEDIUM"  # CRITICAL, HIGH, MEDIUM, LOW
+
+# Exclusions
+excluded_resources:
+  - "projects/*/instances/dev-*"  # Exclude dev instances
+  - "projects/*/buckets/temp-*"   # Exclude temp buckets
+
+# Cloud Storage Configuration
+gcs_bucket: "vulnerability-reports-${PROJECT_ID}"
+gcs_prefix: "reports/"
+retention_days: 90
+
+# BigQuery Configuration
+export_to_bigquery: true
+bigquery_dataset: "security_scanning"
+bigquery_table: "vulnerability_findings"
+
+# Notification Configuration
+notification_channels:
+  - "pubsub"
+  - "email"
+  # - "slack"
+  # - "teams"
+
+pubsub:
+  enabled: true
+  topic: "vulnerability-scan-results"
+
+email:
+  enabled: true
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  username: "${EMAIL_USER}"
+  password: "${EMAIL_PASSWORD}"
+  from: "gcp-security@your-company.com"
+  recipients:
+    - "security-team@your-company.com"
+    - "gcp-admins@your-company.com"
+
+# Report Configuration
+report_formats:
+  - "html"
+  - "csv"
+  - "json"
+
+# Security Command Center Integration
+use_security_command_center: true
+scc_notification_categories:
+  - "XSS"
+  - "SQL_INJECTION"
+  - "INSECURE_COOKIES"
+  - "SSL_NOT_ENFORCED"
+
+# Alert Thresholds
+alert_thresholds:
+  critical: 1
+  high: 5
+  medium: 10
+  low: 20
