@@ -1,5 +1,4 @@
 # GCP Vulnerability Scanner Configuration
-
 # GCP Authentication
 service_account_key_path: "/path/to/service-account-key.json"  # Optional, uses ADC if not specified
 project_id: "your-gcp-project-id"
