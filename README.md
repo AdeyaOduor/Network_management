@@ -135,11 +135,11 @@ pip install -r requirements.txt --upgrade
 
 
 ## Security recommendations for GCP scanner deployment:
-# 1. Use Service Account with least privilege
-# 2. Enable VPC Service Controls
-# 3. Use Customer-Managed Encryption Keys (CMEK)
-# 4. Enable Audit Logging for all operations
-# 5. Use Private Google Access for resources
-# 6. Implement IAM Conditions for fine-grained access
-# 7. Use Secret Manager for sensitive configuration
-# 8. Enable Binary Authorization for containers
+ 1. Use Service Account with least privilege
+ 2. Enable VPC Service Controls
+ 3. Use Customer-Managed Encryption Keys (CMEK)
+ 4. Enable Audit Logging for all operations
+ 5. Use Private Google Access for resources
+ 6. Implement IAM Conditions for fine-grained access
+ 7. Use Secret Manager for sensitive configuration
+ 8. Enable Binary Authorization for containers
