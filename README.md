@@ -125,6 +125,13 @@ Common Issues
 
 ## Linux
 sudo setcap cap_net_raw=eip $(which python3)
+## Or run with sudo
+sudo python network_monitor.py traffic
+
+Missing dependencies
+bash
+
+pip install -r requirements.txt --upgrade
 
 
 ## Security recommendations for GCP scanner deployment:
@@ -136,11 +143,3 @@ sudo setcap cap_net_raw=eip $(which python3)
 # 6. Implement IAM Conditions for fine-grained access
 # 7. Use Secret Manager for sensitive configuration
 # 8. Enable Binary Authorization for containers
-
-# Or run with sudo
-sudo python network_monitor.py traffic
-
-Missing dependencies
-bash
-
-pip install -r requirements.txt --upgrade
